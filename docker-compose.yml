@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  db:
+    container_name: database-ignite
+    image: postgres:13.2
+    restart: always
+    ports: 
+      - ${DB_PORT}:5432
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+      - POSTGRES_DB=${DB_NAME}
